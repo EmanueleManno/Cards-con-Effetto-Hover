@@ -1,0 +1,167 @@
+/*Importazione del Font Raleway*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Stile applicato a tutti gli elementi*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Corpo della pagina*/
+body {
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    background: #2f3238;
+}
+
+/*Stile del contenitore*/
+.container {
+    margin: 30px;
+}
+
+/*Stile della riga*/
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/*Stile della card immagine*/
+.image {
+    background: #50A7FF;
+    position: relative;
+    flex: 1;
+    max-width: 460px;
+    height: 300px;
+    margin: 20px;
+    overflow: hidden;
+}
+
+/*Stile della immagine*/
+.image img {
+    opacity: 0.8;
+    position: relative;
+    vertical-align: top;
+    transition: 0.6s;
+    transition-property: opacity;
+}
+
+/*Stile della immagine in Hover*/
+.image:hover img {
+    opacity: 1;
+}
+
+/*Dettagli dell'immagine*/
+.image .details {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+/*Titoletto dei dettagli dell'immagine*/
+.image .details h2 {
+    text-align: center;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 70px;
+    transition: 0.4s;
+    transition-property: transform;
+}
+
+/*Span dei dettagli dell'immagine*/
+.image .details h2 span {
+    font-weight: 900;
+}
+
+/*Titoletto dei dettagli dell'immagine in Hover*/
+.image:hover .details h2 {
+    transform: translateY(-30px);
+}
+
+/*Paragrafo dei dettagli dell'immagine*/
+.image .details p {
+    margin: 30px 30px 0 30px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    transition: 0.6s;
+    transition-property: opacity, transform;
+}
+
+/*Paragrafo dei dettagli dell'immagine in Hover*/
+.image:hover .details p {
+    opacity: 1;
+    transform: translateY(-40px);
+}
+
+/*Stile del More*/
+.more {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    bottom: -60px;
+    transition: 0.6s;
+    transition-property: bottom;
+    ;
+}
+
+/*Stile del Read More in Hover*/
+.image:hover .more {
+    bottom: 0;
+}
+
+/*Stile del Read More*/
+.more .read-more {
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/*Stile dello span del Read More*/
+.more .read-more span {
+    font-weight: 900;
+}
+
+/*Icone dei links*/
+.more .icon-links i {
+    color: #000;
+    font-size: 20px;
+}
+
+/*Tranne l'ultimo elemento a della lista*/
+.more .icon-links a:not(:last-child) {
+    margin-right: 20px;
+}
+
+/**MEDIA QUERY**/
+@media (max-width: 1080px) {
+    .image {
+        flex: 100%;
+        max-width: 480px;
+    }
+}
+
+@media (max-width: 400px) {
+    .image .details p {
+        font-size: 16px;
+    }
+
+    .more .read-more,
+    .more .icon-links a i {
+        font-size: 18px;
+    }
+}
